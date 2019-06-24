@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import ResultComponent from './components/ResultComponent'
-import KeyPadComponent from './components/KeypadComponent'
+// import ResultComponent from './components/ResultComponent'
+// import KeyPadComponent from './components/KeypadComponent'
 
 class App extends Component {
   constructor(){
@@ -50,16 +50,34 @@ result: (eval(this.state.result) || "") + ""
 
 
   render() {
+    const buttonArr = ["Clear", "+", "-", "1", "2", "3", "*", "4", "5", "6", "/", "7", "8", "9", "="]
     return (
       <div>
         <div className="calculator-body">
-          <h1>Calculator</h1>
           <ResultComponent result={this.state.result}/>
-          <KeyPadComponent onClick={this.onClick}/>
+          <KeyPadComponent className="button" onClick={this.onClick} buttons={buttonArr}/>
         </div>
       </div>
     )
   }
 }
+
+const ResultComponent = ({ result }) => {
+  return (
+    <div className="result">
+      <p>{result}</p>
+    </div>
+  )
+}
+
+const KeyPadComponent = props => (
+  <div className="button">
+    {
+      props.buttons.map(buttonVal => {
+        return <button name={buttonVal} id={"button" + buttonVal} onClick={e => props.onClick(e.target.name)}>{buttonVal}</button>
+      })
+    }
+  </div>
+)
 
 export default App;
