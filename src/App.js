@@ -65,7 +65,7 @@ result: (eval(this.state.result) || "") + ""
 const ResultComponent = ({ result }) => {
   return (
     <div className="result">
-      <p>{result}</p>
+      <p className="resultText">{result}</p>
     </div>
   )
 }

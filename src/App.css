@@ -1,26 +1,37 @@
+body {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 button {
   height: 75px;
-  width: 100px;
+  width: 20vw;
   font-size: 40px;
   background-color: royalblue;
 }
 
 .result {
-  width: 400px;
+  width: 80vw;
   height: 75px;
   background-color: darkgray;
   background-size: 300px;
   color: white;
   font-size: 50px;
+  text-align: right;
+}
+
+.resultText {
+  margin-right: 2vw;
 }
 
 #buttonClear {
-  width: 200px;
+  width: 40vw;
   text-align: left;
 }
 
 .calculator-body {
-  width: 400px;
+  width: 80vw;
 }
 
 #button9 {
